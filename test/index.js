@@ -15,6 +15,29 @@ function app(){
 }
 
 describe('reportTo', function(){
+	it('fails when missing any options', function(){
+		assert.throws(() => NEL(null), Error);
+		assert.throws(() => NEL(123), Error);
+		assert.throws(() => NEL('foo'), Error);
+		assert.throws(() => NEL(undefined), Error);
+		assert.throws(() => NEL(), Error);
+	});
+
+	it('fails when `report_to` bas a bad value', function(){
+		assert.throws(() => NEL({
+			report_to: null,
+		}), Error);
+		assert.throws(() => NEL({
+			report_to: 123,
+		}), Error);
+		assert.throws(() => NEL({
+			report_to: {foo: 'bar'},
+		}), Error);
+		assert.throws(() => NEL({
+			report_to: [],
+		}), Error);
+	});
+
 	it('fails when missing `max_age`', function(){
 		assert.throws(() => NEL({
 			report_to: 'endpoint-1'

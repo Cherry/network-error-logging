@@ -3,6 +3,7 @@ Network Error Logging
 [![npm version](https://badge.fury.io/js/network-error-logging.svg)](https://badge.fury.io/js/network-error-logging)
 [![dependencies Status](https://david-dm.org/Cherry/network-error-logging/status.svg)](https://david-dm.org/Cherry/network-error-logging)
 [![Build Status](https://travis-ci.org/Cherry/network-error-logging.svg?branch=master)](https://travis-ci.org/Cherry/network-error-logging)
+[![Coverage Status](https://coveralls.io/repos/github/Cherry/network-error-logging/badge.svg?branch=master)](https://coveralls.io/github/Cherry/network-error-logging?branch=master)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FCherry%2Fnetwork-error-logging.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FCherry%2Fnetwork-error-logging?ref=badge_shield)
 
 This is Express middleware to set the `NEL` HTTP response header. You can read more about it [here](https://www.w3.org/TR/network-error-logging/#nel-response-header).
