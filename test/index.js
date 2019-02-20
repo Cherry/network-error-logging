@@ -25,16 +25,16 @@ describe('reportTo', function(){
 
 	it('fails when `report_to` bas a bad value', function(){
 		assert.throws(() => NEL({
-			report_to: null,
+			report_to: null
 		}), Error);
 		assert.throws(() => NEL({
-			report_to: 123,
+			report_to: 123
 		}), Error);
 		assert.throws(() => NEL({
-			report_to: {foo: 'bar'},
+			report_to: {foo: 'bar'}
 		}), Error);
 		assert.throws(() => NEL({
-			report_to: [],
+			report_to: []
 		}), Error);
 	});
 
