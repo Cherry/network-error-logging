@@ -30,4 +30,4 @@ This header is best set with a previously defined `Report-To` group. [This modul
 https://report-uri.com/ is a great reporting platform for monitoring CSP, NEL, etc. error logs.
 
 ## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FCherry%2Fnetwork-error-logging.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FCherry%2Fnetwork-error-logging?ref=badge_large)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FCherry%2Fnetwork-error-logging.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FCherry%2Fnetwork-error-logging?ref=badge_large) [![Greenkeeper badge](https://badges.greenkeeper.io/Cherry/network-error-logging.svg)](https://greenkeeper.io/)
