@@ -3,7 +3,7 @@ Network Error Logging
 [![npm version](https://badge.fury.io/js/network-error-logging.svg)](https://badge.fury.io/js/network-error-logging)
 [![dependencies Status](https://david-dm.org/Cherry/network-error-logging/status.svg)](https://david-dm.org/Cherry/network-error-logging)
 [![Greenkeeper badge](https://badges.greenkeeper.io/Cherry/network-error-logging.svg)](https://greenkeeper.io/)
-![Actions Status](https://github.com/Cherry/network-error-logging/workflows/Test/badge.svg)](https://github.com/Cherry/network-error-logging/actions)
+[![Actions Status](https://github.com/Cherry/network-error-logging/workflows/Test/badge.svg)](https://github.com/Cherry/network-error-logging/actions)
 [![Coverage Status](https://coveralls.io/repos/github/Cherry/network-error-logging/badge.svg?branch=master)](https://coveralls.io/github/Cherry/network-error-logging?branch=master)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FCherry%2Fnetwork-error-logging.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FCherry%2Fnetwork-error-logging?ref=badge_shield)
 
