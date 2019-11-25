@@ -1,6 +1,6 @@
 {
 	"name": "network-error-logging",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "NEL Middleware for Express",
 	"keywords": [
 		"NEL",
@@ -32,9 +32,9 @@
 	"devDependencies": {
 		"assert": "^2.0.0",
 		"connect": "^3.7.0",
-		"coveralls": "^3.0.7",
-		"eslint": "^6.5.1",
-		"eslint-config-nodecraft": "^1.7.5",
+		"coveralls": "^3.0.8",
+		"eslint": "^6.7.1",
+		"eslint-config-nodecraft": "^1.7.6",
 		"eslint-plugin-json": "^2.0.1",
 		"eslint-plugin-node": "^10.0.0",
 		"mocha": "^6.2.2",

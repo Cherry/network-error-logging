@@ -78,6 +78,50 @@ describe('reportTo', function(){
 		}), Error);
 	});
 
+	it('fails when `request_headers` bas a bad value', function(){
+		assert.throws(() => NEL({
+			report_to: 'endpoint-1',
+			max_age: 31536000,
+			include_subdomains: true,
+			request_headers: {
+				foo: 'bar'
+			}
+		}), Error);
+	});
+
+	it('fails when `request_headers` bas a bad array value', function(){
+		assert.throws(() => NEL({
+			report_to: 'endpoint-1',
+			max_age: 31536000,
+			include_subdomains: true,
+			request_headers: [{
+				foo: 'bar'
+			}]
+		}), Error);
+	});
+
+	it('fails when `response_headers` bas a bad value', function(){
+		assert.throws(() => NEL({
+			report_to: 'endpoint-1',
+			max_age: 31536000,
+			include_subdomains: true,
+			response_headers: {
+				foo: 'bar'
+			}
+		}), Error);
+	});
+
+	it('fails when `response_headers` bas a bad array value', function(){
+		assert.throws(() => NEL({
+			report_to: 'endpoint-1',
+			max_age: 31536000,
+			include_subdomains: true,
+			response_headers: [{
+				foo: 'bar'
+			}]
+		}), Error);
+	});
+
 	it('expect valid header response', function(){
 		return supertest(app({
 			report_to: 'endpoint-1',
@@ -88,6 +132,21 @@ describe('reportTo', function(){
 		}))
 			.get('/')
 			.expect('NEL', '{"report_to":"endpoint-1","max_age":31536000,"include_subdomains":true,"success_fraction":0.5,"failure_fraction":0.1}')
+			.expect('Hello world!');
+	});
+
+	it('expect valid header response with request_headers and response_headers', function(){
+		return supertest(app({
+			report_to: 'endpoint-1',
+			max_age: 31536000,
+			include_subdomains: true,
+			success_fraction: 0.5,
+			failure_fraction: 0.1,
+			request_headers: ["If-None-Match"],
+			response_headers: ["ETag"]
+		}))
+			.get('/')
+			.expect('NEL', '{"report_to":"endpoint-1","max_age":31536000,"include_subdomains":true,"success_fraction":0.5,"failure_fraction":0.1,"request_headers":["If-None-Match"],"response_headers":["ETag"]}')
 			.expect('Hello world!');
 	});
 

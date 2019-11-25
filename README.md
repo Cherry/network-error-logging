@@ -21,10 +21,12 @@ app.use(NEL({
 	max_age: 31536000, // REQUIRED. seconds
 	include_subdomains: true, // OPTIONAL
 	success_fraction: 0.5, // OPTIONAL. sampling rate
-	failure_fraction: 0.5 // OPTIONAL. sampling rate
+	failure_fraction: 0.5, // OPTIONAL. sampling rate
+	request_headers: ["If-None-Match"], // OPTIONAL. request headers whose names and values are included in the network error reports
+	response_headers: ["ETag"] // OPTIONAL. response headers whose names and values are included in the network error reports
 }))
 ```
-For further documentation on each field, see https://www.w3.org/TR/network-error-logging/#nel-response-header.
+For further documentation on each field, see https://w3c.github.io/network-error-logging/#nel-response-header.
 
 This header is best set with a previously defined `Report-To` group. [This module](https://github.com/Cherry/report-to) is a great way to do that.
 
