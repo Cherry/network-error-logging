@@ -9,10 +9,8 @@ import connect from "connect";
  * functionality. While the type errors exist, they do not affect the test outcomes.
  * This may effect the CI badge on GitHub, however. Honestly not sure about that
  *
- * Additionally, some of the type errors result in the lack of types installed for certain dependencies.
- * This was intentionally left out, because I did not want to overly inflate the package.json with new packages.
- * I didn't want to make any assumptions, basically. If the owner of this project decides they want to tack on
- * the additional types to remove the type errors then that's great
+ * Example: typeof null !== OptionConfig
+ *
  */
 
 function app(...args: any[]) {
@@ -97,7 +95,7 @@ describe("reportTo", function () {
 		);
 	});
 
-	it("fails when `success_fraction` bas a bad value", function () {
+	it("fails when `success_fraction` has a bad value", function () {
 		assert.throws(
 			() =>
 				NEL({
@@ -110,7 +108,7 @@ describe("reportTo", function () {
 		);
 	});
 
-	it("fails when `failure_fraction` bas a bad value", function () {
+	it("fails when `failure_fraction` has a bad value", function () {
 		assert.throws(
 			() =>
 				NEL({
@@ -124,7 +122,7 @@ describe("reportTo", function () {
 		);
 	});
 
-	it("fails when `request_headers` bas a bad value", function () {
+	it("fails when `request_headers` has a bad value", function () {
 		assert.throws(
 			() =>
 				NEL({
@@ -139,7 +137,7 @@ describe("reportTo", function () {
 		);
 	});
 
-	it("fails when `request_headers` bas a bad array value", function () {
+	it("fails when `request_headers` has a bad array value", function () {
 		assert.throws(
 			() =>
 				NEL({
@@ -156,7 +154,7 @@ describe("reportTo", function () {
 		);
 	});
 
-	it("fails when `response_headers` bas a bad value", function () {
+	it("fails when `response_headers` has a bad value", function () {
 		assert.throws(
 			() =>
 				NEL({
@@ -171,7 +169,7 @@ describe("reportTo", function () {
 		);
 	});
 
-	it("fails when `response_headers` bas a bad array value", function () {
+	it("fails when `response_headers` has a bad array value", function () {
 		assert.throws(
 			() =>
 				NEL({

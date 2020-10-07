@@ -7,7 +7,7 @@
 		"strictNullChecks": true,
 		"strictFunctionTypes": true,
 		"typeRoots": ["types"],
-		"types": [],
+		"types": ["mocha"],
 		"noEmit": true,
 		"forceConsistentCasingInFileNames": true,
 		"esModuleInterop": true
