@@ -1,6 +1,6 @@
 {
 	"name": "network-error-logging",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "NEL Middleware for Express",
 	"keywords": [
 		"NEL",
@@ -21,6 +21,7 @@
 	"author": "James Ross <james@jross.me> (https://jross.me)",
 	"files": [
 		"lib",
+		"types",
 		"index.js"
 	],
 	"main": "index.js",

@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.1] - 2020-10-09
+- Include types in npm published version
+
 ## [1.2.0] - 2020-10-09
 - Add better TypeScript support. https://github.com/Cherry/network-error-logging/pull/29
 
