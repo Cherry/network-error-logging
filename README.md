@@ -16,13 +16,13 @@ const NEL = require('network-error-logging')
 // ...
 
 app.use(NEL({
-	report_to: 'endpoint-1', // REQUIRED to register. OPTIONAL if intention is to remove a previous registration. defined in the Report-To header
-	max_age: 31536000, // REQUIRED. seconds
-	include_subdomains: true, // OPTIONAL
-	success_fraction: 0.5, // OPTIONAL. sampling rate
-	failure_fraction: 0.5, // OPTIONAL. sampling rate
-	request_headers: ["If-None-Match"], // OPTIONAL. request headers whose names and values are included in the network error reports
-	response_headers: ["ETag"] // OPTIONAL. response headers whose names and values are included in the network error reports
+  report_to: 'endpoint-1', // REQUIRED to register. OPTIONAL if intention is to remove a previous registration. defined in the Report-To header
+  max_age: 31536000, // REQUIRED. seconds
+  include_subdomains: true, // OPTIONAL
+  success_fraction: 0.5, // OPTIONAL. sampling rate
+  failure_fraction: 0.5, // OPTIONAL. sampling rate
+  request_headers: ["If-None-Match"], // OPTIONAL. request headers whose names and values are included in the network error reports
+  response_headers: ["ETag"] // OPTIONAL. response headers whose names and values are included in the network error reports
 }))
 ```
 For further documentation on each field, see https://w3c.github.io/network-error-logging/#nel-response-header.
