@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from "express";
+import { Request, Response, NextFunction, RequestHandler } from "express";
 
 type OptionsConfig = {
 	report_to?: string;
@@ -19,5 +19,5 @@ type OptionsConfig = {
  */
 declare function networkErrorLogging(
 	options: OptionsConfig
-): (req: Request, res: Response, next: NextFunction) => any;
+): (req: Request, res: Response, next: NextFunction) => RequestHandler;
 export = networkErrorLogging;
