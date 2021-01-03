@@ -7,7 +7,7 @@ const assert = require('assert');
 
 function app(){
 	const app = connect();
-	app.use(NEL.apply(null, arguments));
+	app.use(Reflect.apply(NEL, null, arguments));
 	app.use(function(req, res){
 		return res.end('Hello world!');
 	});
@@ -19,7 +19,6 @@ describe('reportTo', function(){
 		assert.throws(() => NEL(null), Error);
 		assert.throws(() => NEL(123), Error);
 		assert.throws(() => NEL('foo'), Error);
-		assert.throws(() => NEL(undefined), Error);
 		assert.throws(() => NEL(), Error);
 	});
 
@@ -54,7 +53,7 @@ describe('reportTo', function(){
 	it('fails when `include_subdomains` bas a bad value', function(){
 		assert.throws(() => NEL({
 			report_to: 'endpoint-1',
-			max_age: 31536000,
+			max_age: 31_536_000,
 			include_subdomains: -1
 		}), Error);
 	});
@@ -62,7 +61,7 @@ describe('reportTo', function(){
 	it('fails when `success_fraction` bas a bad value', function(){
 		assert.throws(() => NEL({
 			report_to: 'endpoint-1',
-			max_age: 31536000,
+			max_age: 31_536_000,
 			include_subdomains: true,
 			success_fraction: -1
 		}), Error);
@@ -71,7 +70,7 @@ describe('reportTo', function(){
 	it('fails when `failure_fraction` bas a bad value', function(){
 		assert.throws(() => NEL({
 			report_to: 'endpoint-1',
-			max_age: 31536000,
+			max_age: 31_536_000,
 			include_subdomains: true,
 			success_fraction: 0.5,
 			failure_fraction: -1
@@ -81,7 +80,7 @@ describe('reportTo', function(){
 	it('fails when `request_headers` bas a bad value', function(){
 		assert.throws(() => NEL({
 			report_to: 'endpoint-1',
-			max_age: 31536000,
+			max_age: 31_536_000,
 			include_subdomains: true,
 			request_headers: {
 				foo: 'bar'
@@ -92,7 +91,7 @@ describe('reportTo', function(){
 	it('fails when `request_headers` bas a bad array value', function(){
 		assert.throws(() => NEL({
 			report_to: 'endpoint-1',
-			max_age: 31536000,
+			max_age: 31_536_000,
 			include_subdomains: true,
 			request_headers: [{
 				foo: 'bar'
@@ -103,7 +102,7 @@ describe('reportTo', function(){
 	it('fails when `response_headers` bas a bad value', function(){
 		assert.throws(() => NEL({
 			report_to: 'endpoint-1',
-			max_age: 31536000,
+			max_age: 31_536_000,
 			include_subdomains: true,
 			response_headers: {
 				foo: 'bar'
@@ -114,7 +113,7 @@ describe('reportTo', function(){
 	it('fails when `response_headers` bas a bad array value', function(){
 		assert.throws(() => NEL({
 			report_to: 'endpoint-1',
-			max_age: 31536000,
+			max_age: 31_536_000,
 			include_subdomains: true,
 			response_headers: [{
 				foo: 'bar'
@@ -125,7 +124,7 @@ describe('reportTo', function(){
 	it('expect valid header response', function(){
 		return supertest(app({
 			report_to: 'endpoint-1',
-			max_age: 31536000,
+			max_age: 31_536_000,
 			include_subdomains: true,
 			success_fraction: 0.5,
 			failure_fraction: 0.1
@@ -138,7 +137,7 @@ describe('reportTo', function(){
 	it('expect valid header response with request_headers and response_headers', function(){
 		return supertest(app({
 			report_to: 'endpoint-1',
-			max_age: 31536000,
+			max_age: 31_536_000,
 			include_subdomains: true,
 			success_fraction: 0.5,
 			failure_fraction: 0.1,
@@ -154,7 +153,7 @@ describe('reportTo', function(){
 		assert.strictEqual(NEL.name, 'networkErrorLogging');
 		assert.strictEqual(NEL.name, NEL({
 			report_to: 'endpoint-1',
-			max_age: 31536000,
+			max_age: 31_536_000,
 			include_subdomains: true,
 			success_fraction: 0.5,
 			failure_fraction: 0.1
