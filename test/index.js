@@ -3,7 +3,7 @@
 const NEL = require('..');
 const connect = require('connect');
 const supertest = require('supertest');
-const assert = require('assert');
+const assert = require('node:assert');
 
 function app(){
 	const app = connect();
@@ -24,29 +24,29 @@ describe('reportTo', function(){
 
 	it('fails when `report_to` bas a bad value', function(){
 		assert.throws(() => NEL({
-			report_to: null
+			report_to: null,
 		}), Error);
 		assert.throws(() => NEL({
-			report_to: 123
+			report_to: 123,
 		}), Error);
 		assert.throws(() => NEL({
-			report_to: {foo: 'bar'}
+			report_to: {foo: 'bar'},
 		}), Error);
 		assert.throws(() => NEL({
-			report_to: []
+			report_to: [],
 		}), Error);
 	});
 
 	it('fails when missing `max_age`', function(){
 		assert.throws(() => NEL({
-			report_to: 'endpoint-1'
+			report_to: 'endpoint-1',
 		}), Error);
 	});
 
 	it('fails when `max_age` bas a bad value', function(){
 		assert.throws(() => NEL({
 			report_to: 'endpoint-1',
-			max_age: -1
+			max_age: -1,
 		}), Error);
 	});
 
@@ -54,7 +54,7 @@ describe('reportTo', function(){
 		assert.throws(() => NEL({
 			report_to: 'endpoint-1',
 			max_age: 31_536_000,
-			include_subdomains: -1
+			include_subdomains: -1,
 		}), Error);
 	});
 
@@ -63,7 +63,7 @@ describe('reportTo', function(){
 			report_to: 'endpoint-1',
 			max_age: 31_536_000,
 			include_subdomains: true,
-			success_fraction: -1
+			success_fraction: -1,
 		}), Error);
 	});
 
@@ -73,7 +73,7 @@ describe('reportTo', function(){
 			max_age: 31_536_000,
 			include_subdomains: true,
 			success_fraction: 0.5,
-			failure_fraction: -1
+			failure_fraction: -1,
 		}), Error);
 	});
 
@@ -83,8 +83,8 @@ describe('reportTo', function(){
 			max_age: 31_536_000,
 			include_subdomains: true,
 			request_headers: {
-				foo: 'bar'
-			}
+				foo: 'bar',
+			},
 		}), Error);
 	});
 
@@ -94,8 +94,8 @@ describe('reportTo', function(){
 			max_age: 31_536_000,
 			include_subdomains: true,
 			request_headers: [{
-				foo: 'bar'
-			}]
+				foo: 'bar',
+			}],
 		}), Error);
 	});
 
@@ -105,8 +105,8 @@ describe('reportTo', function(){
 			max_age: 31_536_000,
 			include_subdomains: true,
 			response_headers: {
-				foo: 'bar'
-			}
+				foo: 'bar',
+			},
 		}), Error);
 	});
 
@@ -116,8 +116,8 @@ describe('reportTo', function(){
 			max_age: 31_536_000,
 			include_subdomains: true,
 			response_headers: [{
-				foo: 'bar'
-			}]
+				foo: 'bar',
+			}],
 		}), Error);
 	});
 
@@ -127,7 +127,7 @@ describe('reportTo', function(){
 			max_age: 31_536_000,
 			include_subdomains: true,
 			success_fraction: 0.5,
-			failure_fraction: 0.1
+			failure_fraction: 0.1,
 		}))
 			.get('/')
 			.expect('NEL', '{"report_to":"endpoint-1","max_age":31536000,"include_subdomains":true,"success_fraction":0.5,"failure_fraction":0.1}')
@@ -142,7 +142,7 @@ describe('reportTo', function(){
 			success_fraction: 0.5,
 			failure_fraction: 0.1,
 			request_headers: ["If-None-Match"],
-			response_headers: ["ETag"]
+			response_headers: ["ETag"],
 		}))
 			.get('/')
 			.expect('NEL', '{"report_to":"endpoint-1","max_age":31536000,"include_subdomains":true,"success_fraction":0.5,"failure_fraction":0.1,"request_headers":["If-None-Match"],"response_headers":["ETag"]}')
@@ -156,7 +156,7 @@ describe('reportTo', function(){
 			max_age: 31_536_000,
 			include_subdomains: true,
 			success_fraction: 0.5,
-			failure_fraction: 0.1
+			failure_fraction: 0.1,
 		}).name);
 	});
 });
