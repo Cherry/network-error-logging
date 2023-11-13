@@ -1,9 +1,12 @@
 'use strict';
 /* global describe, it */
-const NEL = require('..');
+const assert = require('node:assert');
+
 const connect = require('connect');
 const supertest = require('supertest');
-const assert = require('node:assert');
+
+const NEL = require('..');
+
 
 function app() {
 	const app = connect();
@@ -30,7 +33,7 @@ describe('reportTo', function() {
 			report_to: 123,
 		}), Error);
 		assert.throws(() => NEL({
-			report_to: {foo: 'bar'},
+			report_to: { foo: 'bar' },
 		}), Error);
 		assert.throws(() => NEL({
 			report_to: [],
